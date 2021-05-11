@@ -158,8 +158,6 @@ footer {
 .fa-tripadvisor:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-animation: color-change 1s ease-in-out infinite alternate both;
-  animation: color-change 1s ease-in-out infinite alternate both;
 }
 
 body {
@@ -200,13 +198,25 @@ a {
           flex-direction: initial;
   -webkit-box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.35);
           box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.35);
+  border-radius: 1rem;
+}
+
+.cam-list {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
 }
 
 .card {
   padding: 0;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
-  border-radius: 12px;
+  -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
+  border-radius: 1rem !important;
+}
+
+.card-img, .card-img-top {
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
 }
 
 .card-title {
@@ -360,7 +370,9 @@ a {
     -webkit-animation: slide-in-top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
             animation: slide-in-top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
-  
+  .section-title {
+    padding-top: 12rem;
+  }
   #camera-item {
     width: 90%;
   }
