@@ -174,7 +174,7 @@ a {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
   font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
-  padding-top: 9rem;
+  padding-top: 9rem !important;
 }
 
 .sub-title {
