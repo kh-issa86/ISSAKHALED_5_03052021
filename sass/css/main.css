@@ -212,6 +212,8 @@ a {
   -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
           box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
   border-radius: 1rem !important;
+  width: 93% !important;
+  padding: 0 !important;
 }
 
 .card-img, .card-img-top {
