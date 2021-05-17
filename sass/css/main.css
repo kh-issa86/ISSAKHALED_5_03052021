@@ -86,6 +86,14 @@ header {
   position: fixed;
   z-index: 99;
 }
+.navbar-nav {
+  border: 2px solid black;
+  border-radius: 1em;
+  box-shadow: .1em .2em 1em;
+}
+.nav-link:hover {
+  color: blue !important;
+}
 
 nav {
   height: 110px;
@@ -159,7 +167,10 @@ footer {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
-
+.backwards {
+  font-size: 3em;
+  margin-top: 1.5em;
+}
 body {
   color: black;
 }
@@ -214,6 +225,7 @@ a {
   border-radius: 1rem !important;
   width: 93% !important;
   padding: 0 !important;
+  cursor: pointer;
 }
 
 .card-img, .card-img-top {

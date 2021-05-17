@@ -28,7 +28,7 @@ const Card = () => {
                 <div class="card-body">
                     <h5 class="card-title">${camera.name}</h5>
                     <p class="card-text">${camera.description}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="../html/product.html?id=${camera._id}" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
