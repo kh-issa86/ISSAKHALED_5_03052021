@@ -87,9 +87,8 @@ header {
   z-index: 99;
 }
 .navbar-nav {
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 1em;
-  box-shadow: .1em .2em 1em;
 }
 .nav-link:hover {
   color: blue !important;
