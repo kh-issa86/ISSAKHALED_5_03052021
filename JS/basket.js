@@ -19,7 +19,7 @@ const tableRow = () => {
 
 // Product's table in the basket
 
-const productsTable = () => {
+const productsTable = (productToAdd) => {
      let myTr = document.createElement('tr')
      myTr.id = 'parent-price'
      console.log("myTr", myTr)
@@ -28,7 +28,7 @@ const productsTable = () => {
      //td name
      let myTd = document.createElement('td')
      myTd.className = 'text-center'
-     myTd.textContent = (`${productsTableInfo.name}  ${productsTableInfo.lenses}`)
+     myTd.textContent = (`${productToAdd.name}  ${productToAdd.lenses}`)
      console.log("myTd", myTd)
      myTr.appendChild(myTd)
 
@@ -43,15 +43,18 @@ const productsTable = () => {
      let myButton = document.createElement('button')
      myButton.className = 'btn mx-auto quantity-reduce'
      myButton.type = 'button'
-     myButton.setAttribute('onclick', 'buttonBasketReduce()')
+     myButton.addEventListener("click" , () => {
+          buttonBasketReduce(productToAdd)
+     })     
      myButton.textContent = '-'
      console.log("myButton", myButton)
      myTd.appendChild(myButton)
 
      // Quantity span
      let mySpan = document.createElement('span')
+     mySpan.id = "quantity-span-" + productToAdd._id;
      mySpan.className = 'quantity-product'
-     mySpan.textContent = (`${productsTableInfo.quantity}`)
+     mySpan.textContent = (`${productToAdd.quantity}`)
      myTd.appendChild(mySpan)
 
 
@@ -59,16 +62,18 @@ const productsTable = () => {
      myButton = document.createElement('button')
      myButton.className = 'btn mx-auto quantity-plus'
      myButton.type = 'button'
-     myButton.setAttribute('onclick', 'buttonBasketPlus()')
+     myButton.addEventListener("click" , () => {
+          buttonBasketPlus(productToAdd)
+     })
      myButton.textContent = '+'
      console.log("myButton", myButton)
      myTd.appendChild(myButton)
 
      // td price
      myTd = document.createElement('td')
-     myTd.id = 'price-table'
+     myTd.id = 'product-price-' + productToAdd._id
      myTd.className = 'text-center'
-     myTd.textContent = (`${productsTableInfo.price + ' €'}`)
+     myTd.textContent = (`${productToAdd.price + ' €'}`)
      console.log("myTd", myTd)
      myTr.appendChild(myTd)
 
@@ -76,19 +81,19 @@ const productsTable = () => {
 
 
 
-const buttonBasketReduce = () => {
-     let $quantityProduct = document.querySelector('.quantity-product')
-     $quantityProduct.innerHTML = --productsTableInfo.quantity 
-     const $priceTable = document.querySelector('#price-table')
-     const priceTableTotal = productsTableInfo.priceByItems * productsTableInfo.quantity
+const buttonBasketReduce = (product) => {
+     let $quantityProduct = document.querySelector('#quantity-span-' + product._id)
+     $quantityProduct.innerHTML = --product.quantity 
+     const $priceTable = document.querySelector('#product-price-' + product._id)
+     const priceTableTotal = product.priceByItems * product.quantity
      $priceTable.innerHTML = priceTableTotal 
      
 }
-const buttonBasketPlus = () => {
-     let $quantityProduct = document.querySelector('.quantity-product')
-     $quantityProduct.innerHTML = ++productsTableInfo.quantity 
-     const $priceTable = document.querySelector('#price-table')
-     const priceTableTotal = productsTableInfo.priceByItems * productsTableInfo.quantity
+const buttonBasketPlus = (product) => {
+     let $quantityProduct = document.querySelector('#quantity-span-' + product._id)
+     $quantityProduct.innerHTML = ++product.quantity 
+     const $priceTable = document.querySelector('#product-price-' + product._id)
+     const priceTableTotal = product.priceByItems * product.quantity
      $priceTable.innerHTML = priceTableTotal    
      
 }
@@ -159,9 +164,11 @@ if (!storage) { //to verify if the storage exist
           tableRow()
           tableFooter()
           implementBasket()
-          products.forEach((result) => { 
-               productsTableInfo = result
-               productsTable()
+     
+          products.forEach((productToAdd) => { 
+               productsTableInfo = productToAdd
+               console.log(productToAdd)
+               productsTable(productToAdd)
           });
      } else if (products.length >= 1 && localStorage.order) { 
           tableEmpty()
