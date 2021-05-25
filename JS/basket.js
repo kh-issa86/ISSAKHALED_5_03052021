@@ -82,20 +82,25 @@ const productsTable = (productToAdd) => {
 
 
 const buttonBasketReduce = (product) => {
-     let $quantityProduct = document.querySelector('#quantity-span-' + product._id)
-     $quantityProduct.innerHTML = --product.quantity 
-     const $priceTable = document.querySelector('#product-price-' + product._id)
-     const priceTableTotal = product.priceByItems * product.quantity
-     $priceTable.innerHTML = priceTableTotal 
+     const reducedQuantity = --product.quantity
+     setQuantity (product._id , reducedQuantity)
+     setPrice (product._id , product.priceByItems, reducedQuantity)
      
 }
 const buttonBasketPlus = (product) => {
-     let $quantityProduct = document.querySelector('#quantity-span-' + product._id)
-     $quantityProduct.innerHTML = ++product.quantity 
-     const $priceTable = document.querySelector('#product-price-' + product._id)
-     const priceTableTotal = product.priceByItems * product.quantity
-     $priceTable.innerHTML = priceTableTotal    
+     const increasedQuantity = ++product.quantity
+     setQuantity (product._id , increasedQuantity)
+     setPrice (product._id , product.priceByItems, increasedQuantity)
      
+}
+const setQuantity = (productId, quantity) => {
+     let $quantityProduct = document.querySelector('#quantity-span-' + productId)
+     $quantityProduct.innerHTML = quantity 
+}
+const setPrice = (productId, price, quantity) => {
+     const $priceTable = document.querySelector('#product-price-' + productId)
+     const priceTableTotal = price * quantity
+     $priceTable.innerHTML = priceTableTotal 
 }
 
 
