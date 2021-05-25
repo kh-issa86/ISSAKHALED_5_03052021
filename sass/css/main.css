@@ -228,8 +228,9 @@ a {
 }
 
 .card-img, .card-img-top {
-  border-top-left-radius: 1rem !important;
-  border-top-right-radius: 1rem !important;
+  border-radius: 1rem !important;
+  border-radius: 1rem !important;
+
 }
 
 .card-title {
@@ -279,8 +280,8 @@ a {
   border: 2px solid black;
   font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
   margin-top: 7rem;
-  -webkit-animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+
+
 }
 
 #confirm-command,
@@ -296,6 +297,8 @@ a {
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  border-radius: 1em;
+
 }
 
 #confirm-command:hover,
@@ -316,6 +319,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+
 }
 
 .main-order {
@@ -353,6 +357,35 @@ a {
   -webkit-animation: color-change 1s ease-in-out infinite alternate both;
           animation: color-change 1s ease-in-out infinite alternate both;
 }
+
+
+.table > thead {
+  background-color: darkgray;
+}
+
+#camera-item{
+margin: 0 auto;}
+
+.add-to-products{
+  background-color: goldenrod !important;
+  border-radius: 1em !important;
+}
+
+.add-to-products:hover {
+transform: scale(1.1);
+}
+
+.btn-primary {
+  background-color: #b56d9c !important;
+  border-radius: 1em !important;
+  border-color:#b56d9c !important;
+
+}
+
+.btn-primary:hover {
+  transform: scale(1.1);
+  }
+
 
 @media (max-width: 991px) {
   nav {

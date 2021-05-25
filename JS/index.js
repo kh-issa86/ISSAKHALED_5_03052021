@@ -10,7 +10,7 @@ fetch("http://localhost:3000/api/cameras")
         result.forEach((result) => {
             camera = result;
             console.log("camera", camera);
-            Card();
+            card();
         });
     })
     .catch((error) => {
@@ -19,7 +19,7 @@ fetch("http://localhost:3000/api/cameras")
 
 //Cameras cards
 
-const Card = () => {
+const card = () => {
     $cameraList.innerHTML += 
     `<div id="cam-list" class="col-12 mt-1 pt-4 pb-4">
         <div class="row camera-list row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
@@ -28,7 +28,7 @@ const Card = () => {
                 <div class="card-body">
                     <h5 class="card-title">${camera.name}</h5>
                     <p class="card-text">${camera.description}</p>
-                    <a href="html/product.html?id=${camera._id}" class="btn btn-primary">Go somewhere</a>
+                    <a href="html/product.html?id=${camera._id}" class="btn btn-primary">Plus d’informations</a>
                 </div>
             </div>
         </div>
