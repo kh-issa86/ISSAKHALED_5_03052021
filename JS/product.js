@@ -1,39 +1,38 @@
 //Product Page
 //Initialise the variables
 let camera;
-const $cameraProduct = document.querySelector('#camera-product')
+const $cameraProduct = document.querySelector("#camera-product");
 const lenses = document.createElement("select");
 
 //URL
-const params = (new URL(document.location)).searchParams;
-const id = params.get('id'); 
+const params = new URL(document.location).searchParams;
+const id = params.get("id");
 
 //Call the API
-fetch("http://localhost:3000/api/cameras/" + id) 
-    .then(async result_ => {  
-        const result = await result_.json() 
-        camera = result 
-        lenseList()
-        cameraCard()   
-    })
-    .catch((error) => {
-        console.log(error);
-    })
+fetch("http://localhost:3000/api/cameras/" + id)
+  .then(async (result_) => {
+    const result = await result_.json();
+    camera = result;
+    lenseList();
+    cameraCard();
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 //Lenses table's fonction
 const lenseList = () => {
-    for (let i = 0; i < camera.lenses.length; i++) {
-        const option = document.createElement("option")
-        option.setAttribute("value", camera.lenses[i])             
-        option.innerHTML = camera.lenses[i]
-        lenses.appendChild(option)
-    }
-}
+  for (let i = 0; i < camera.lenses.length; i++) {
+    const option = document.createElement("option");
+    option.setAttribute("value", camera.lenses[i]);
+    option.innerHTML = camera.lenses[i];
+    lenses.appendChild(option);
+  }
+};
 
 //Camera card template
 const cameraCard = () => {
-    $cameraProduct.innerHTML +=
-        (`<div id="camera-product" class="card col-2 mt-3 ml-1">
+  $cameraProduct.innerHTML += `<div id="camera-product" class="card col-2 mt-3 ml-1">
         </div>
             
         <div id="camera-item" class="card mb-3 justify-content-center">
@@ -74,41 +73,73 @@ const cameraCard = () => {
               </div>
             </div>
           </div>
-        `)
-    addToPrice()
-}
+        `;
+  addToPrice();
+};
 
 //changing the price according to the quantity
 const addToPrice = () => {
-    let $cameraPrice = document.querySelector('#camera-price')
-    let quantity = document.querySelector('#quantity').value
-    $cameraPrice.innerHTML = (`${camera.price * quantity / 100},00 €`)
-}
-
-
+  let $cameraPrice = document.querySelector("#camera-price");
+  let quantity = document.querySelector("#quantity").value;
+  $cameraPrice.innerHTML = `${(camera.price * quantity) / 100},00 €`;
+};
 
 //Fonction pour le localStorage
 
 const addToBasket = () => {
-    const quantity = document.querySelector('#quantity').value 
-    let storage = window.localStorage.getItem("basket") // Create our basket storage
-    if (!storage) {
-        storage = {
-            products: [],
-        }
-    } else {
-        storage = JSON.parse(storage) // Extracting our json
-    }
-    storage.products.push({
-        name: camera.name,
-        _id: camera._id,
-        lenses: inputGroupSelect01.value,
-        quantity: quantity,
-        price: camera.price * quantity / 100,
-        priceByItems: camera.price,
-        imageUrl: camera.imageUrl,
-    })
-    window.localStorage.setItem("basket", JSON.stringify(storage))
-    alert(`${quantity} appareil ${camera.name} lentille  ${inputGroupSelect01.value} ajouté à votre panier !`)
-}
+  const quantity = document.querySelector("#quantity").value;
+  let storage = window.localStorage.getItem("basket"); // Create our basket storage
+  if (!storage) {
+    storage = {
+      products: [],
+    };
+  } else {
+    storage = JSON.parse(storage); // Extracting our json
+  }
 
+  const existingProduct = storage.products.find(
+    (productToFind) => productToFind._id === camera._id
+  );
+
+  if (existingProduct) {
+    updateExistingProductInBasket(existingProduct, camera, quantity);
+  } else {
+    addNewProductToBasket(
+      storage.products,
+      camera,
+      quantity,
+      inputGroupSelect01
+    );
+  }
+
+  window.localStorage.setItem("basket", JSON.stringify(storage));
+  alert(
+    `${quantity} appareil ${camera.name} lentille  ${inputGroupSelect01.value} ajouté à votre panier !`
+  );
+};
+
+const addNewProductToBasket = (
+  allProducts,
+  camera,
+  quantity,
+  inputGroupSelect01
+) => {
+  allProducts.push({
+    name: camera.name,
+    _id: camera._id,
+    lenses: inputGroupSelect01.value,
+    quantity: quantity,
+    price: (camera.price * quantity) / 100,
+    priceByItems: camera.price / 100,
+    imageUrl: camera.imageUrl,
+  });
+};
+
+const updateExistingProductInBasket = (
+  existingProduct,
+  camera,
+  addedQuantity
+) => {
+  existingProduct.quantity = parseInt(existingProduct.quantity) + parseInt(addedQuantity);
+  existingProduct.price = (camera.price * existingProduct.quantity) / 100;
+};
