@@ -103,7 +103,7 @@ const addToBasket = () => {
         name: camera.name,
         _id: camera._id,
         lenses: inputGroupSelect01.value,
-        quantity: productToAdd.quantity,
+        quantity: quantity,
         price: camera.price * quantity / 100,
         priceByItems: camera.price,
         imageUrl: camera.imageUrl,
