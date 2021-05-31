@@ -53,7 +53,7 @@ const cameraCard = () => {
                             ${lenses.innerHTML}
                         </select>
                         <label class="camera-quantity-selector col-sm-4 col-12 text-center " for="camera-quantity">Quantité: 
-                            <select id="quantity" onclick="addToPrice()" class="text-center mx-auto" name="camera-quantity">
+                            <select id="quantity" onchange="addToPrice()" class="text-center mx-auto" name="camera-quantity">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -82,7 +82,7 @@ const cameraCard = () => {
 const addToPrice = () => {
     let $cameraPrice = document.querySelector('#camera-price')
     let quantity = document.querySelector('#quantity').value
-    $cameraPrice.innerHTML = (`${camera.price * quantity} €`)
+    $cameraPrice.innerHTML = (`${camera.price * quantity / 100},00 €`)
 }
 
 
@@ -90,26 +90,25 @@ const addToPrice = () => {
 //Fonction pour le localStorage
 
 const addToBasket = () => {
-    const quantity = document.querySelector('#quantity').value //Récupère la valeur de la quantité
-    let storage = window.localStorage.getItem("orinocoCamera") //Créer notre stockage de panier
+    const quantity = document.querySelector('#quantity').value 
+    let storage = window.localStorage.getItem("basket") // Create our basket storage
     if (!storage) {
         storage = {
             products: [],
         }
     } else {
-        storage = JSON.parse(storage) //On extrait notre json 
+        storage = JSON.parse(storage) // Extracting our json
     }
     storage.products.push({
         name: camera.name,
         _id: camera._id,
         lenses: inputGroupSelect01.value,
-        quantity: quantity,
-        price: camera.price * quantity,
+        quantity: productToAdd.quantity,
+        price: camera.price * quantity / 100,
         priceByItems: camera.price,
         imageUrl: camera.imageUrl,
     })
-    window.localStorage.setItem("orinocoCamera", JSON.stringify(storage))
+    window.localStorage.setItem("basket", JSON.stringify(storage))
     alert(`${quantity} appareil ${camera.name} lentille  ${inputGroupSelect01.value} ajouté à votre panier !`)
-    console.log("my cart has :", storage)
 }
 

@@ -6,12 +6,12 @@ let $cameraList = document.querySelector("#camera-list");
 //requesting the API
 fetch("http://localhost:3000/api/cameras")
     .then(async (result_) => {
-        const result = await result_.json();
+        const result = await result_.json(); // The rest of the code is executed after the execution of the promise
         result.forEach((result) => {
             camera = result;
-            console.log("camera", camera);
+         // Call our function
             card();
-        });
+         });
     })
     .catch((error) => {
         console.log(error);

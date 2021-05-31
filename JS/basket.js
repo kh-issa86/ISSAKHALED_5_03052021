@@ -10,7 +10,7 @@ let productsTotalId = [];
 const $productsTableBody = document.querySelector('#products-tablebody');
 
 // get our localstorage in json
-let storage = localStorage.getItem("orinocoCamera");
+let storage = localStorage.getItem("basket");
 const tableRow = () => {
      for (let i = 0; i < products.length; i++) {
           productsTableInfo = products[i] 
@@ -19,7 +19,7 @@ const tableRow = () => {
 
 // Product's table in the basket
 
-const productsTable = (productToAdd) => {
+const productsTable = (productToAdd) => {      
      let myTr = document.createElement('tr')
      myTr.id = 'parent-price'
      console.log("myTr", myTr)
@@ -80,6 +80,7 @@ const productsTable = (productToAdd) => {
 }
 
 
+// reduce product's quantity fonction
 
 const buttonBasketReduce = (product) => {
      const reducedQuantity = --product.quantity
@@ -87,19 +88,24 @@ const buttonBasketReduce = (product) => {
      setPrice (product._id , product.priceByItems, reducedQuantity)
      
 }
+
+// increase product's quantity fonction
+
 const buttonBasketPlus = (product) => {
      const increasedQuantity = ++product.quantity
      setQuantity (product._id , increasedQuantity)
-     setPrice (product._id , product.priceByItems, increasedQuantity)
-     
+     setPrice (product._id , product.priceByItems, increasedQuantity)  
 }
+
 const setQuantity = (productId, quantity) => {
      let $quantityProduct = document.querySelector('#quantity-span-' + productId)
      $quantityProduct.innerHTML = quantity 
 }
+
+
 const setPrice = (productId, price, quantity) => {
      const $priceTable = document.querySelector('#product-price-' + productId)
-     const priceTableTotal = price * quantity
+     const priceTableTotal = price * quantity / 100 
      $priceTable.innerHTML = priceTableTotal 
 }
 
@@ -121,7 +127,7 @@ const tableFooter = () => {
                </a>
           </td>
           <td class="text-center">
-               <p class="mt-3">Sous total : <span id="sub-total"></span>€</p>
+               <p class="mt-3">Sous total : <span id="sub-total"></span>,00 €</p>
           </td>
      </tr>`)
 }
@@ -178,6 +184,35 @@ if (!storage) { //to verify if the storage exist
      } else if (products.length >= 1 && localStorage.order) { 
           tableEmpty()
      }
+}
+
+//Send the command to localstorage
+
+const sendCommand = () => {
+     let order = window.localStorage.getItem("sendCommand") 
+     const $productsCalcul = document.querySelector('#sub-total')
+     if (!order) {
+          order = {
+               products: [],
+          }
+     } else {
+          order = JSON.parse(order) 
+     }
+     order.products.unshift({ 
+          name: productsTotalName,
+          quantity: productsTotalQuant,
+          price: productsTotalSub,
+          id: productsTotalId,
+     })
+     if (order.products.length > 1) { 
+          const pos = 1
+          const n = 1
+          order.products.splice(pos, n)
+     }
+     window.localStorage.setItem("sendCommand", JSON.stringify(order))
+     localStorage.removeItem("orderResult") 
+     localStorage.removeItem("order")
+     alert(`Votre commande d'un total de ${$productsCalcul.textContent} € est envoyée. Vous allez être redirigé pour finaliser votre commande.`)
 }
 
 
