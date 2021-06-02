@@ -73,7 +73,7 @@ const productsTable = (productToAdd) => {
   myTd.className = "text-center";
   myTd.textContent = `${productToAdd.price + " €"}`;
   console.log("myTd", myTd);
-  myTr.appendChild(myTd);
+  myTr.appendChild(myTd);  
 };
 
 // reduce product's quantity fonction

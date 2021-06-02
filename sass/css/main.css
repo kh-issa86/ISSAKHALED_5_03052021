@@ -330,10 +330,14 @@ a {
 .caption-order {
   margin-bottom: -5rem;
 }
-
-.caption-form {
-  font-size: 19px;
+label {
+  margin-top: 1em;
 }
+.caption-form {
+  font-size: 20px;
+  font-weight: 700;
+}
+
 
 .hide {
   display: none !important;
@@ -350,6 +354,7 @@ a {
 
 .form-control {
   border: 2px solid black !important;
+  border-radius: 1em !important;
 }
 
 .form-control:focus {
@@ -367,6 +372,11 @@ a {
 #camera-item{
 margin: 0 auto;}
 
+#camera-buy {
+  background-color: forestgreen;
+  border-radius: 1em !important;
+}
+
 .add-to-products{
   background-color: goldenrod !important;
   border-radius: 1em !important;
@@ -383,7 +393,7 @@ transform: scale(1.1);
 
 }
 
-.btn-primary:hover {
+.btn-primary:hover, #camera-buy:hover {
   transform: scale(1.1);
   }
 
