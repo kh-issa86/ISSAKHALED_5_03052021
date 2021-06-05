@@ -73,7 +73,7 @@ const productsTable = (productToAdd) => {
   myTd.className = "text-center";
   myTd.textContent = `${productToAdd.price + " €"}`;
   console.log("myTd", myTd);
-  myTr.appendChild(myTd);  
+  myTr.appendChild(myTd);
 };
 
 // reduce product's quantity fonction
@@ -101,7 +101,7 @@ const setQuantity = (productId, quantity) => {
 
 const setPrice = (productId, price, quantity) => {
   const $priceTable = document.querySelector("#product-price-" + productId);
-  const priceTableTotal = (price * quantity);
+  const priceTableTotal = price * quantity;
   $priceTable.innerHTML = priceTableTotal + " €";
 };
 
@@ -124,7 +124,7 @@ const tableFooter = () => {
                </a>
           </td>
           <td class="text-center">    
-               <a href="order.html">
+               <a>
                     <button type="button" onclick="sendCommand()" id="confirm-command" class="btn col-md-6 col-12 mx-auto">Passer la commande</button>
                </a>
           </td>
@@ -219,6 +219,7 @@ const sendCommand = () => {
   alert(
     `Votre commande d'un total de ${$productsCalcul.textContent} € est envoyée. Vous allez être redirigé pour finaliser votre commande.`
   );
+  document.location.reload();
 };
 
 // order cancel
