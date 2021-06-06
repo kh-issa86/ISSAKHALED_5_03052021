@@ -217,7 +217,7 @@ const sendCommand = () => {
   localStorage.removeItem("orderResult");
   localStorage.removeItem("order");
   alert(
-    `Votre commande d'un total de ${$productsCalcul.textContent} € est envoyée. Vous allez être redirigé pour finaliser votre commande.`
+    `Votre commande d'un total de ${$productsCalcul.textContent} € est envoyée. Merci de compléter le formulaire au dessous pour finaliser votre commande.`
   );
   document.location.reload();
 };

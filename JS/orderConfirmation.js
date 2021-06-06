@@ -8,7 +8,7 @@ const commandEmpty = () => {
 
 const showOrderMessage = (orderId) => {
   $orderSend.innerHTML += `
-    <p>Votre commande a bien été enregistrée.</p>
+    <p>Votre commande d'un total de ${totalPrice} € a bien été enregistrée .</p>
     <p>Votre numéro de commande est le : ${orderId}.</p>
     <p>Merci de votre achat et à bientôt</p>
     `;

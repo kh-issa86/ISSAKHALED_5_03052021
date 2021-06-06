@@ -27,23 +27,13 @@ const commandForm = () => {
          <label for="adress">Addresse</label>
          <input required type="text" class="form-control" id="adress">
      </div>
-     <div class="form-group">
-         <label for="inputComplement">Complément</label>
-         <input type="text" class="form-control" id="inputComplement" placeholder="Appartement, étages...">
-     </div>
+     
      <div class="row">
          <div class="form-group col-md-5">
              <label for="city">Ville</label>
              <input required type="text" class="form-control" id="city">
          </div>
-         <div class="form-group col-md-4">
-             <label for="inputState">Région</label>
-             <input required type="text" class="form-control" id="inputState">
-         </div>
-         <div class="form-group col-md-3">
-                 <label for="inputZip">Code postal</label>
-                 <input required type="text" class="form-control" id="inputZip">
-         </div>
+     
      </div>
      <div class="form-row">
          <div class="form-group col-12">
@@ -78,11 +68,19 @@ $orderForm.addEventListener("submit", () => {
   }
   //Condition to verify that the email is valide
   const email = $email.value;
-  const regexEmail = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/; //regex to validate the email format
+  const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //regex to validate the email format
   if (regexEmail.exec(email) == null) {
     alert("Merci de remplir un email correct");
     return false;
   }
+
+  const address = adress.value;
+  const regexAddress = /^\d+\s[A-z]+\s[A-z]+/;
+  if (regexAddress.exec(address) == null) {
+       alert("Merci de remplir un address correct");
+       return false;
+  }
+  
 
   let order = {
     contact: {
