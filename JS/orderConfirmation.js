@@ -6,9 +6,9 @@ const commandEmpty = () => {
      `;
 };
 
-const showOrderMessage = (orderId) => {
+const showOrderMessage = (orderId, price) => {
   $orderSend.innerHTML += `
-    <p>Votre commande d'un total de € a bien été enregistrée .</p>
+    <p>Votre commande d'un total de ${price} € a bien été enregistrée .</p>
     <p>Votre numéro de commande est le : ${orderId}.</p>
     <p>Merci de votre achat et à bientôt</p>
     `;
@@ -16,9 +16,10 @@ const showOrderMessage = (orderId) => {
 
 const order = localStorage.order;
 const orderResult = localStorage.orderResult;
+const price = localStorage.price;
 
 if (order && orderResult) {
-  showOrderMessage(orderResult);
+  showOrderMessage(orderResult, price);
 } else {
   commandEmpty();
 }

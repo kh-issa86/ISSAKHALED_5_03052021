@@ -110,7 +110,10 @@ $orderForm.addEventListener("submit", () => {
       );
       window.localStorage.setItem("order", JSON.stringify(order));
       localStorage.removeItem("basket");
+      const price = document.querySelector("#sub-total").textContent;
+      localStorage.setItem("price", price)
       localStorage.removeItem("sendCommand");
+
     })
     .catch((error) => {
       console.log(error);
