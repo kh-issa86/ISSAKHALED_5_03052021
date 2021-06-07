@@ -44,6 +44,8 @@ const productsTable = (productToAdd) => {
   myButton.type = "button";
   myButton.addEventListener("click", () => {
     buttonBasketReduce(productToAdd);
+    window.localStorage.setItem("basket", JSON.stringify(storage));
+
   });
   myButton.textContent = "-";
   console.log("myButton", myButton);
@@ -62,6 +64,8 @@ const productsTable = (productToAdd) => {
   myButton.type = "button";
   myButton.addEventListener("click", () => {
     buttonBasketPlus(productToAdd);
+    window.localStorage.setItem("basket", JSON.stringify(storage));
+
   });
   myButton.textContent = "+";
   console.log("myButton", myButton);
