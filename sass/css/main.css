@@ -399,6 +399,21 @@ transform: scale(1.1);
   transform: scale(1.1);
   }
 
+  #supprimer {
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 5px;
+    box-shadow: 0em 0em 1em 0.05em !important;
+    border: 1px rgb(175, 0, 0) solid;
+    margin-top: 1em;
+}
+#supprimer:hover {
+  transform: scale(1.5);
+  background-color: rgb(175, 0, 0) ;
+
+}
+
 
 @media (max-width: 991px) {
   nav {
