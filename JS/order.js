@@ -6,9 +6,6 @@ if (!localStorage.basket && localStorage.orderResult) {
 // initialise the variables
 const $orderForm = document.querySelector("#order-form");
 
-//Fonction for an emty order
-
-
 //Fonction for the form of the command
 const commandForm = () => {
   $orderForm.innerHTML += `
@@ -77,10 +74,9 @@ $orderForm.addEventListener("submit", () => {
   const address = adress.value;
   const regexAddress = /^\d+\s[A-z]+\s[A-z]+/;
   if (regexAddress.exec(address) == null) {
-       alert("Merci de remplir un address correct");
-       return false;
+    alert("Merci de remplir un address correct");
+    return false;
   }
-  
 
   let order = {
     contact: {
@@ -111,9 +107,8 @@ $orderForm.addEventListener("submit", () => {
       window.localStorage.setItem("order", JSON.stringify(order));
       localStorage.removeItem("basket");
       const price = document.querySelector("#sub-total").textContent;
-      localStorage.setItem("price", price)
+      localStorage.setItem("price", price);
       localStorage.removeItem("sendCommand");
-
     })
     .catch((error) => {
       console.log(error);

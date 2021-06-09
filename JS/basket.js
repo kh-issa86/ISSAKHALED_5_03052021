@@ -45,7 +45,6 @@ const productsTable = (productToAdd) => {
   myButton.addEventListener("click", () => {
     buttonBasketReduce(productToAdd);
     window.localStorage.setItem("basket", JSON.stringify(storage));
-
   });
   myButton.textContent = "-";
   console.log("myButton", myButton);
@@ -65,7 +64,6 @@ const productsTable = (productToAdd) => {
   myButton.addEventListener("click", () => {
     buttonBasketPlus(productToAdd);
     window.localStorage.setItem("basket", JSON.stringify(storage));
-
   });
   myButton.textContent = "+";
   console.log("myButton", myButton);
@@ -79,9 +77,18 @@ const productsTable = (productToAdd) => {
   console.log("myTd", myTd);
   myTr.appendChild(myTd);
 
-//supprimer 
+  //supprimer
 
   xButton = document.createElement("button");
+  xButton.addEventListener("click", () => {
+    newProductTable = products.filter(
+      (product) => product._id != productToAdd._id
+    );
+    storage.products = newProductTable;
+    localStorage.setItem("basket", JSON.stringify(storage));
+    window.location.reload();
+  });
+
   xButton.id = "supprimer";
   xButton.textContent = "X";
   xButton.type = "button";
@@ -114,6 +121,16 @@ const setQuantity = (productId, quantity) => {
 const setPrice = (productId, price, quantity) => {
   const $priceTable = document.querySelector("#product-price-" + productId);
   const priceTableTotal = price * quantity;
+
+  for (let i = 0; i < products.length; i++) {
+    const product = products[i];
+    if (product._id == productId) {
+      product.price = price * quantity;
+    }
+  }
+  storage.products = products;
+  localStorage.setItem("basket", JSON.stringify(storage));
+
   $priceTable.innerHTML = priceTableTotal + " €";
 };
 

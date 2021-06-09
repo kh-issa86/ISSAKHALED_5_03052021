@@ -5,23 +5,22 @@ let $cameraList = document.querySelector("#camera-list");
 
 //requesting the API
 fetch("http://localhost:3000/api/cameras")
-    .then(async (result_) => {
-        const result = await result_.json(); // The rest of the code is executed after the execution of the promise
-        result.forEach((result) => {
-            camera = result;
-         // Call our card function
-            card();
-         });
-    })
-    .catch((error) => {
-        console.log(error);
+  .then(async (result_) => {
+    const result = await result_.json(); // The rest of the code is executed after the execution of the promise
+    result.forEach((result) => {
+      camera = result;
+      // Call our card function
+      card();
     });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 //Cameras cards
 
 const card = () => {
-    $cameraList.innerHTML += 
-    `<div id="cam-list" class="col-12 mt-1 pt-4 pb-4">
+  $cameraList.innerHTML += `<div id="cam-list" class="col-12 mt-1 pt-4 pb-4">
         <div class="row camera-list row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
             <div class="card col-lg-12 col-md-12 col-sm-12 col-12 mt-1">
                 <img src="${camera.imageUrl}" class="card-img-top" alt="..." />

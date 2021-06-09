@@ -140,6 +140,7 @@ const updateExistingProductInBasket = (
   camera,
   addedQuantity
 ) => {
-  existingProduct.quantity = parseInt(existingProduct.quantity) + parseInt(addedQuantity);
+  existingProduct.quantity =
+    parseInt(existingProduct.quantity) + parseInt(addedQuantity);
   existingProduct.price = (camera.price * existingProduct.quantity) / 100;
 };
