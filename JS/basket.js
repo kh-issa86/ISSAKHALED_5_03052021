@@ -78,9 +78,17 @@ const productsTable = (productToAdd) => {
   myTd.textContent = `${productToAdd.price + " €"}`;
   console.log("myTd", myTd);
   myTr.appendChild(myTd);
+
+//supprimer 
+
+  xButton = document.createElement("button");
+  xButton.id = "supprimer";
+  xButton.textContent = "X";
+  xButton.type = "button";
+  myTr.appendChild(xButton);
 };
 
-// reduce product's quantity fonction
+// reiduce product's quantity fonction
 
 const buttonBasketReduce = (product) => {
   const reducedQuantity = --product.quantity;
