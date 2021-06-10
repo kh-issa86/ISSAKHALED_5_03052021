@@ -20,25 +20,24 @@ const commandForm = () => {
            <input required type="text" class="form-control" id="firstName">
          </div>
      </div>
-     <div class="form-group">
+     <div class="row">
+     <div class="form-group col-md-8">
          <label for="adress">Addresse</label>
          <input required type="text" class="form-control" id="adress">
      </div>
-     
-     <div class="row">
-         <div class="form-group col-md-5">
+     <div class="form-group col-md-4">
              <label for="city">Ville</label>
              <input required type="text" class="form-control" id="city">
          </div>
-     
      </div>
+
      <div class="form-row">
          <div class="form-group col-12">
            <label for="email">Email</label>
            <input required type="email" class="form-control" id="email">
          </div>
      </div>
-     <button type="submit" id="camera-buy" class="btn col-sm-4 col-12 mx-auto mx-auto mt-4 mb-4">Commander</button>
+     <button type="submit" id="camera-buy" class="commander btn col-sm-4 col-12 mx-auto mx-auto mt-4 mb-4">Commander</button>
      `;
 };
 
