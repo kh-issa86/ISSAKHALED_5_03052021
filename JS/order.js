@@ -9,6 +9,7 @@ const $orderForm = document.querySelector("#order-form");
 //Fonction for the form of the command
 const commandForm = () => {
   $orderForm.innerHTML += `
+  <div class="form-container">
      <h3 class="caption-form text-center">Merci de compléter les différents champs pour finaliser votre commande</h3>
      <div class="row mt-3">
          <div class="form-group col-md-6">
@@ -38,6 +39,7 @@ const commandForm = () => {
          </div>
      </div>
      <button type="submit" id="camera-buy" class="commander btn col-sm-4 col-12 mx-auto mx-auto mt-4 mb-4">Commander</button>
+     </div>
      `;
 };
 

@@ -347,7 +347,6 @@ label {
 .form-parent {
   font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS",
     "Times New Roman", "Trebuchet MS";
-  /* border: 2px solid black !important; */
   padding-top: 2rem;
   margin-top: 1em;
   -webkit-animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
@@ -357,10 +356,10 @@ label {
 }
 
 .form-control {
-  border: 1px solid black !important;
   border-radius: 1em !important;
-  box-shadow: 0em 1em 3em 0.05em !important;
+  box-shadow: 0em 0.3em 0.5em 0em !important;
 }
+
 
 .form-control:focus {
   -webkit-box-shadow: 0 0 0 0.15rem #965eee !important;
@@ -369,11 +368,16 @@ label {
   animation: color-change 1s ease-in-out infinite alternate both;
 }
 
-.caption-form {
+.form-container {
   border: 2px black solid;
+  padding: 1.5em;
+  border-radius: 2em;
+  background-color: #828c8445;
+}
+.caption-form {
+  border-bottom: 2px black solid;
   padding: 1em;
   font-size: 22px;
-  border-radius: 1em;
 }
 
 .table > thead {
@@ -385,8 +389,9 @@ label {
 }
 
 #camera-buy {
-  background-color: forestgreen;
+  background-color: #639763;
   border-radius: 1em !important;
+  box-shadow: 0em 0.3em 0.5em 0em !important;
 }
 
 .add-to-products {
