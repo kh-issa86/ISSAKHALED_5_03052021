@@ -84,11 +84,11 @@ const addToPrice = () => {
   $cameraPrice.innerHTML = `${(camera.price * quantity) / 100},00 €`;
 };
 
-//Fonction pour le localStorage
+//Fonction for localStorage
 
 const addToBasket = () => {
-  const quantity = document.querySelector("#quantity").value;
-  let storage = window.localStorage.getItem("basket"); // Create our basket storage
+  const quantity = document.querySelector("#quantity").value; //get the value of the quantity selected by the user
+  let storage = window.localStorage.getItem("basket"); // Create our basket storage variable
   if (!storage) {
     storage = {
       products: [],
@@ -112,8 +112,8 @@ const addToBasket = () => {
     );
   }
 
-  window.localStorage.setItem("basket", JSON.stringify(storage));
-  alert(
+  window.localStorage.setItem("basket", JSON.stringify(storage)); //creat a LS element to store the basket 
+  alert( //confirmation alert of added product, mode, price to the basket
     `${quantity} appareil ${camera.name} lentille  ${inputGroupSelect01.value} ajouté à votre panier !`
   );
 };
@@ -135,6 +135,7 @@ const addNewProductToBasket = (
   });
 };
 
+//fonction to add an existing product to the basket will update the quantity not creat another line
 const updateExistingProductInBasket = (
   existingProduct,
   camera,

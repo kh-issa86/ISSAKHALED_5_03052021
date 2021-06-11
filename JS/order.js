@@ -41,8 +41,8 @@ const commandForm = () => {
      `;
 };
 
-$orderForm.addEventListener("submit", () => {
-  const $lastName = document.querySelector("#lastName");
+$orderForm.addEventListener("submit", () => { //get the user contact information from the form 
+  const $lastName = document.querySelector("#lastName"); 
   const $firstName = document.querySelector("#firstName");
   const $adress = document.querySelector("#adress");
   const $city = document.querySelector("#city");
@@ -66,12 +66,12 @@ $orderForm.addEventListener("submit", () => {
   const email = $email.value;
   const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //regex to validate the email format
   if (regexEmail.exec(email) == null) {
-    alert("Merci de remplir un email correct");
+    alert("Merci de remplir un email correct"); //if the email entered not the right format
     return false;
   }
 
   const address = adress.value;
-  const regexAddress = /^\d+\s[A-z]+\s[A-z]+/;
+  const regexAddress = /^\d+\s[A-z]+\s[A-z]+/; //verify the format of postal address //15 rue de la Libération//
   if (regexAddress.exec(address) == null) {
     alert("Merci de remplir un address correct");
     return false;
@@ -101,10 +101,10 @@ $orderForm.addEventListener("submit", () => {
       const result = await result_.json();
       window.localStorage.setItem(
         "orderResult",
-        JSON.stringify(result.orderId)
+        JSON.stringify(result.orderId) //stringify the sent object
       );
       window.localStorage.setItem("order", JSON.stringify(order));
-      localStorage.removeItem("basket");
+      localStorage.removeItem("basket"); // remove the basket from LS if an order has been completed
       const price = document.querySelector("#sub-total").textContent;
       localStorage.setItem("price", price);
       localStorage.removeItem("sendCommand");
@@ -113,19 +113,18 @@ $orderForm.addEventListener("submit", () => {
       console.log(error);
     });
   alert(`Commande prise en compte. Merci de votre achat !`);
-  document.location.reload();
+  document.location.reload(); 
 });
 
 //Condition to show and use our command
-let storageCommand = localStorage.getItem("sendCommand"); //getting storageCommand in json
+let storageCommand = localStorage.getItem("sendCommand"); //getting sendCommand in json
 if (!storageCommand) {
-  // verify if storageCommand exist
+  // verify if sendCommand exist
   //if not
   storageCommand = {
     products: [], //creat an empty table
   };
 } else {
-  //if yes
   //extract the json
   storageCommand = JSON.parse(storageCommand);
   products = storageCommand.products;

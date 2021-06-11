@@ -14,7 +14,6 @@ nav {
   justify-content: flex-end;
 }
 
-
 .navbar-light .navbar-toggler {
   color: $colour-border !important;
   border-color: $colour-border !important;
@@ -33,10 +32,8 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   height: 7em;
   align-content: center;
 }
-
-

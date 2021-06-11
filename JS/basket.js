@@ -44,7 +44,7 @@ const productsTable = (productToAdd) => {
   myButton.type = "button";
   myButton.addEventListener("click", () => {
     buttonBasketReduce(productToAdd);
-    window.localStorage.setItem("basket", JSON.stringify(storage));
+    window.localStorage.setItem("basket", JSON.stringify(storage)); //update the quantity in the localstorage
   });
   myButton.textContent = "-";
   console.log("myButton", myButton);
@@ -63,7 +63,7 @@ const productsTable = (productToAdd) => {
   myButton.type = "button";
   myButton.addEventListener("click", () => {
     buttonBasketPlus(productToAdd);
-    window.localStorage.setItem("basket", JSON.stringify(storage));
+    window.localStorage.setItem("basket", JSON.stringify(storage)); //update the quantity in the localstorage
   });
   myButton.textContent = "+";
   console.log("myButton", myButton);
@@ -81,12 +81,12 @@ const productsTable = (productToAdd) => {
 
   xButton = document.createElement("button");
   xButton.addEventListener("click", () => {
-    newProductTable = products.filter(
+    newProductTable = products.filter( 
       (product) => product._id != productToAdd._id
     );
     storage.products = newProductTable;
-    localStorage.setItem("basket", JSON.stringify(storage));
-    window.location.reload();
+    localStorage.setItem("basket", JSON.stringify(storage)); // update the basket in LS after deleting a product
+    window.location.reload(); // reload the page to display the updated basket
   });
 
   xButton.id = "supprimer";
@@ -95,7 +95,7 @@ const productsTable = (productToAdd) => {
   myTr.appendChild(xButton);
 };
 
-// reiduce product's quantity fonction
+// reduce product's quantity fonction
 
 const buttonBasketReduce = (product) => {
   const reducedQuantity = --product.quantity;
@@ -149,12 +149,12 @@ const tableFooter = () => {
      <tr class="container">
           <td class="text-center">
                <a href="../index.html">
-                    <button type="button" onclick="clearCommand()" id="clear-command" class="btn col-md-6 col-12 mx-auto d-none d-sm-block">Annuler la commande</button>
+                  <button type="button" onclick="clearCommand()" id="clear-command" class="btn col-md-6 col-12 mx-auto d-none d-sm-block">Annuler la commande</button>
                </a>
           </td>
           <td class="text-center">    
                <a>
-                    <button type="button" onclick="sendCommand()" id="confirm-command" class="btn col-md-6 col-12 mx-auto">Passer la commande</button>
+                  <button type="button" onclick="sendCommand()" id="confirm-command" class="btn col-md-6 col-12 mx-auto">Passer la commande</button>
                </a>
           </td>
           <td class="text-center">
@@ -198,7 +198,7 @@ if (!storage) {
   if (storage.products.length <= 0 || localStorage.order) {
     tableEmpty();
   }
-} else {
+} else { //creat product table in the basket page
   storage = JSON.parse(storage);
   products = storage.products;
   if (
@@ -243,8 +243,8 @@ const sendCommand = () => {
     order.products.splice(pos, n);
   }
   window.localStorage.setItem("sendCommand", JSON.stringify(order));
-  localStorage.removeItem("orderResult");
-  localStorage.removeItem("order");
+  localStorage.removeItem("orderResult"); //remove old localstorage
+  localStorage.removeItem("order"); //remove old localstorage
   alert(
     `Votre commande d'un total de ${$productsCalcul.textContent} € est envoyée. Merci de compléter le formulaire au dessous pour finaliser votre commande.`
   );

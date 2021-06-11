@@ -97,14 +97,15 @@ header {
 nav {
   height: 110px;
   border-bottom: 1px solid;
-  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
   background-color: white;
 }
 
 #navbarSupportedContent {
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .navbar-light .navbar-toggler {
@@ -118,7 +119,7 @@ nav {
 
 .navbar-toggler:focus {
   -webkit-box-shadow: 0 0 0 0.05rem !important;
-          box-shadow: 0 0 0 0.05rem !important;
+  box-shadow: 0 0 0 0.05rem !important;
 }
 
 .navbar {
@@ -127,18 +128,18 @@ nav {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   height: 7em;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
 }
 
 footer {
@@ -164,7 +165,7 @@ footer {
 .fa-facebook-f:hover,
 .fa-tripadvisor:hover {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 .backwards {
   font-size: 3em;
@@ -182,45 +183,48 @@ a {
 .section-title {
   padding: 2rem 0 2rem 0;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
-  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
   padding-top: 9rem !important;
 }
 
 .sub-title {
-  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
 }
 
 .text-sub-title {
-  font-family: "Roboto Thin", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  font-family: "Roboto Thin", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
   font-weight: 600;
   font-size: 19px;
 }
 
 #camera-list {
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-orient: initial;
   -webkit-box-direction: initial;
-      -ms-flex-direction: initial;
-          flex-direction: initial;
+  -ms-flex-direction: initial;
+  flex-direction: initial;
   -webkit-box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.35);
-          box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.35);
   border-radius: 1rem;
 }
 
 .cam-list {
   -webkit-box-pack: center !important;
-      -ms-flex-pack: center !important;
-          justify-content: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
 }
 
 .card {
   padding: 0;
   -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
-          box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
   border-radius: 1rem !important;
   width: 93% !important;
   padding: 0 !important;
@@ -228,26 +232,28 @@ a {
   border: 0 !important;
 }
 
-.card-img, .card-img-top {
+.card-img,
+.card-img-top {
   border-radius: 1rem !important;
   border-radius: 1rem !important;
-
 }
 
 .card-title {
-  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
 }
 
 .card-text {
-  font-family: "Roboto Thin", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  font-family: "Roboto Thin", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
   font-weight: 700;
   font-size: 18px;
 }
 
 #camera-infos {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,7 +262,8 @@ a {
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
 }
 
 .background-image-camera {
@@ -273,23 +280,22 @@ a {
 
 #navbarSupportedContent {
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 #table-empty {
   border: 2px solid black;
-  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
   margin-top: 7rem;
-
-
 }
 
 #confirm-command,
 #clear-command {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,13 +305,12 @@ a {
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   border-radius: 1em;
-
 }
 
 #confirm-command:hover,
 #clear-command:hover {
   -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   -webkit-animation: color-change 1s ease-in-out infinite alternate both;
   animation: color-change 1s ease-in-out infinite alternate both;
 }
@@ -313,14 +318,13 @@ a {
 #confirm-command:focus,
 #clear-command:focus {
   -webkit-box-shadow: 0 0 0 0.15rem #c07677 !important;
-          box-shadow: 0 0 0 0.15rem #c07677 !important;
+  box-shadow: 0 0 0 0.15rem #c07677 !important;
 }
 
 #title-table-empty {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .main-order {
@@ -336,17 +340,18 @@ label {
   font-weight: bold;
 }
 
-
 .hide {
   display: none !important;
 }
 
 .form-parent {
-  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS", "Times New Roman", "Trebuchet MS";
+  font-family: "Roboto Regular", Arial, "Arial Black", "Comic Sans MS",
+    "Times New Roman", "Trebuchet MS";
   /* border: 2px solid black !important; */
   padding-top: 2rem;
   margin-top: 1em;
-  -webkit-animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
   animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   border-radius: 1em;
 }
@@ -359,48 +364,48 @@ label {
 
 .form-control:focus {
   -webkit-box-shadow: 0 0 0 0.15rem #965eee !important;
-          box-shadow: 0 0 0 0.15rem #965eee !important;
+  box-shadow: 0 0 0 0.15rem #965eee !important;
   -webkit-animation: color-change 1s ease-in-out infinite alternate both;
-          animation: color-change 1s ease-in-out infinite alternate both;
+  animation: color-change 1s ease-in-out infinite alternate both;
 }
 
-.caption-form { 
+.caption-form {
   border: 2px black solid;
   padding: 1em;
   font-size: 22px;
   border-radius: 1em;
 }
 
-
 .table > thead {
   background-color: darkgray;
 }
 
-#camera-item{
-margin: 0 auto;}
+#camera-item {
+  margin: 0 auto;
+}
 
 #camera-buy {
   background-color: forestgreen;
   border-radius: 1em !important;
 }
 
-.add-to-products{
+.add-to-products {
   background-color: goldenrod !important;
   border-radius: 1em !important;
 }
 
 .add-to-products:hover {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .btn-primary {
   background-color: #b56d9c !important;
   border-radius: 1em !important;
-  border-color:#b56d9c !important;
-
+  border-color: #b56d9c !important;
 }
 
-.btn-primary:hover, #camera-buy:hover {
+.btn-primary:hover,
+#camera-buy:hover {
   transform: scale(1.1);
 }
 
@@ -408,23 +413,21 @@ transform: scale(1.1);
   border-radius: 50%;
   font-weight: bold;
   font-size: 10px;
-  padding: 5px;
+  padding: 1px;
   box-shadow: 0em 0em 1em 0.05em !important;
-  border: 1px rgb(175, 0, 0) solid;
+  border: 2px rgb(0, 0, 0) solid;
   margin-top: 1em;
 }
 #supprimer:hover {
   transform: scale(1.5);
-  background-color: rgb(175, 0, 0) ;
-
+  background-color: rgba(179, 3, 3, 0.644);
 }
 #order-send {
-    margin-top: 4em;
-    border: 2px black solid;
-    border-radius: 1em;
-    padding-top: 2em;
+  margin-top: 4em;
+  border: 2px black solid;
+  border-radius: 1em;
+  padding-top: 2em;
 }
-
 
 @media (max-width: 991px) {
   nav {
@@ -433,27 +436,30 @@ transform: scale(1.1);
   }
   .slide-in-top-first {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
   .slide-in-top-second {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
   .slide-in-top-third {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
   .link-index {
-    -webkit-animation: slide-in-top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-            animation: slide-in-top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -webkit-animation: slide-in-top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   .link-basket {
-    -webkit-animation: slide-in-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-            animation: slide-in-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -webkit-animation: slide-in-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   .link-order {
-    -webkit-animation: slide-in-top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-            animation: slide-in-top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -webkit-animation: slide-in-top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   .section-title {
     padding-top: 12rem;
