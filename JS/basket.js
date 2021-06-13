@@ -98,6 +98,11 @@ const productsTable = (productToAdd) => {
 // reduce product's quantity fonction
 
 const buttonBasketReduce = (product) => {
+  if (product.quantity <= 1) {
+    // no negative values
+    return;
+  }
+
   const reducedQuantity = --product.quantity;
   setQuantity(product._id, reducedQuantity);
   setPrice(product._id, product.priceByItems, reducedQuantity);
@@ -189,17 +194,23 @@ const implementBasket = () => {
 };
 
 //Condition to show and use the basket
+try {
+  storage = JSON.parse(storage);
+} catch (e) {
+  console.error(e);
+}
 
-if (!storage) {
-  //to verify if the storage exist
+if (!storage || !storage.products) {
   storage = {
     products: [],
   };
-  if (storage.products.length <= 0 || localStorage.order) {
-    tableEmpty();
-  }
-} else { //creat product table in the basket page
-  storage = JSON.parse(storage);
+}
+
+if (storage.products.length <= 0) {
+  //to verify if the storage exist
+  tableEmpty();
+} else {
+  //creat product table in the basket page
   products = storage.products;
   if (
     products.length >= 1 &&
