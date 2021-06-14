@@ -25,3 +25,8 @@ if (order && orderResult) { //condition to show the command page
 } else {
   commandEmpty(); //show the empty table message if there is no order yet
 }
+
+// order cancel
+const clearCommand = () => {
+  localStorage.clear(); //empty the localstorage
+};

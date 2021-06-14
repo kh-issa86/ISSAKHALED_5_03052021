@@ -151,8 +151,8 @@ footer {
 
 .fa-twitter,
 .fa-facebook-f,
-.fa-tripadvisor {
-  font-size: 25px;
+.fa-instagram {
+  font-size: 2em;
   color: #000000;
   padding-top: 2rem;
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
@@ -163,7 +163,7 @@ footer {
 
 .fa-twitter:hover,
 .fa-facebook-f:hover,
-.fa-tripadvisor:hover {
+.fa-instagram:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
@@ -432,6 +432,16 @@ label {
   border: 2px black solid;
   border-radius: 1em;
   padding-top: 2em;
+}
+
+.acheter-new {
+  background-color: #639763 !important;
+  box-shadow: 0em 0em 1em 0.05em !important;
+  margin-top: 2em;
+  border: 0px !important;
+
+  
+ 
 }
 
 @media (max-width: 991px) {
