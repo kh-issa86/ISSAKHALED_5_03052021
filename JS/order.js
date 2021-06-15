@@ -43,8 +43,9 @@ const commandForm = () => {
      `;
 };
 
-$orderForm.addEventListener("submit", () => { //get the user contact information from the form 
-  const $lastName = document.querySelector("#lastName"); 
+$orderForm.addEventListener("submit", () => {
+  //get the user contact information from the form
+  const $lastName = document.querySelector("#lastName");
   const $firstName = document.querySelector("#firstName");
   const $adress = document.querySelector("#adress");
   const $city = document.querySelector("#city");
@@ -115,7 +116,7 @@ $orderForm.addEventListener("submit", () => { //get the user contact information
       console.log(error);
     });
   alert(`Commande prise en compte. Merci de votre achat !`);
-  document.location.reload(); 
+  document.location.reload();
 });
 
 //Condition to show and use our command

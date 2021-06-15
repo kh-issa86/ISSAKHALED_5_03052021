@@ -81,7 +81,7 @@ const productsTable = (productToAdd) => {
 
   xButton = document.createElement("button");
   xButton.addEventListener("click", () => {
-    newProductTable = products.filter( 
+    newProductTable = products.filter(
       (product) => product._id != productToAdd._id
     );
     storage.products = newProductTable;
@@ -177,6 +177,13 @@ const tableEmpty = () => {
           <td></td>
      </tr>
      `;
+  localStorage.clear();
+  window.onload = function () {
+    if (!window.location.hash) {
+      window.location = window.location + "#loaded"; //to reload the page only once to clear the command
+      window.location.reload();
+    }
+  };
 };
 
 // Basket implémentation

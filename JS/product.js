@@ -112,8 +112,9 @@ const addToBasket = () => {
     );
   }
 
-  window.localStorage.setItem("basket", JSON.stringify(storage)); //creat a LS element to store the basket 
-  alert( //confirmation alert of added product, mode, price to the basket
+  window.localStorage.setItem("basket", JSON.stringify(storage)); //creat a LS element to store the basket
+  alert(
+    //confirmation alert of added product, mode, price to the basket
     `${quantity} appareil ${camera.name} lentille  ${inputGroupSelect01.value} ajouté à votre panier !`
   );
 };

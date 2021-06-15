@@ -360,7 +360,6 @@ label {
   box-shadow: 0em 0.3em 0.5em 0em !important;
 }
 
-
 .form-control:focus {
   -webkit-box-shadow: 0 0 0 0.15rem #965eee !important;
   box-shadow: 0 0 0 0.15rem #965eee !important;
@@ -439,9 +438,6 @@ label {
   box-shadow: 0em 0em 1em 0.05em !important;
   margin-top: 2em;
   border: 0px !important;
-
-  
- 
 }
 
 @media (max-width: 991px) {
