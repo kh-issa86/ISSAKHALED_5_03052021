@@ -101,10 +101,10 @@ const addToBasket = () => {
     (productToFind) => productToFind._id === camera._id
   );
 
-  if (existingProduct) {
-    updateExistingProductInBasket(existingProduct, camera, quantity);
+  if (existingProduct) { //check if the products already been added to the basket  
+    updateExistingProductInBasket(existingProduct, camera, quantity); //if so, increase the quantity of the product
   } else {
-    addNewProductToBasket(
+    addNewProductToBasket( //if not, add as a new product
       storage.products,
       camera,
       quantity,
