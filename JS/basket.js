@@ -118,12 +118,12 @@ const buttonBasketPlus = (product) => {
   updateTotalPrice(product.priceByItems);
 };
 
-const setQuantity = (productId, quantity) => {
+const setQuantity = (productId, quantity) => { //to get the quantity of the products 
   let $quantityProduct = document.querySelector("#quantity-span-" + productId);
   $quantityProduct.innerHTML = quantity;
 };
 
-const setPrice = (productId, price, quantity) => {
+const setPrice = (productId, price, quantity) => { //get the product prices and id to do the calculations
   const $priceTable = document.querySelector("#product-price-" + productId);
   const priceTableTotal = price * quantity;
 
@@ -224,7 +224,7 @@ if (storage.products.length <= 0) {
     (localStorage.order == undefined || localStorage.order)
   ) {
     tableRow();
-    tableFooter();
+    tableFooter(); //products table in the basket page
     implementBasket();
 
     products.forEach((productToAdd) => {
@@ -233,7 +233,7 @@ if (storage.products.length <= 0) {
       productsTable(productToAdd);
     });
   } else if (products.length >= 1 && localStorage.order) {
-    tableEmpty();
+    tableEmpty(); //show an empty basket
   }
 }
 
@@ -242,14 +242,14 @@ if (storage.products.length <= 0) {
 const sendCommand = () => {
   let order = window.localStorage.getItem("sendCommand");
   const $productsCalcul = document.querySelector("#sub-total");
-  if (!order) {
+  if (!order) { // check if there are any orders
     order = {
-      products: [],
+      products: [], 
     };
   } else {
     order = JSON.parse(order);
   }
-  order.products.unshift({
+  order.products.unshift({ //get the order infos
     name: productsTotalName,
     quantity: productsTotalQuant,
     price: productsTotalSub,

@@ -109,7 +109,7 @@ $orderForm.addEventListener("submit", () => {
       window.localStorage.setItem("order", JSON.stringify(order));
       localStorage.removeItem("basket"); // remove the basket from LS if an order has been completed
       const price = document.querySelector("#sub-total").textContent;
-      localStorage.setItem("price", price);
+      // localStorage.setItem("price", price);
       localStorage.removeItem("sendCommand");
     })
     .catch((error) => {
