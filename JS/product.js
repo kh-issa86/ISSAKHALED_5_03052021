@@ -101,10 +101,12 @@ const addToBasket = () => {
     (productToFind) => productToFind._id === camera._id
   );
 
-  if (existingProduct) { //check if the products already been added to the basket  
+  if (existingProduct) {
+    //check if the products already been added to the basket
     updateExistingProductInBasket(existingProduct, camera, quantity); //if so, increase the quantity of the product
   } else {
-    addNewProductToBasket( //if not, add as a new product
+    addNewProductToBasket(
+      //if not, add as a new product
       storage.products,
       camera,
       quantity,
@@ -125,7 +127,7 @@ const addNewProductToBasket = (
   quantity,
   inputGroupSelect01
 ) => {
-  allProducts.push({
+  allProducts.push({ //adds one or more elements to the end of an array and returns the new length of the array.
     name: camera.name,
     _id: camera._id,
     lenses: inputGroupSelect01.value,
