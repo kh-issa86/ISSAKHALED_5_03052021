@@ -1,6 +1,8 @@
 # Orinoco #
 
-This is the back end server for Project 5 of the Junior Web Developer path.
+Fifth project of the web developer path at OpenClassrooms.
+
+The main objective is to create the front-end of an e-commerce site in vanilla JavaScript by consuming a previously provided API.
 
 ### Prerequisites ###
 
