@@ -1,5 +1,5 @@
 # Orinoco #
-# Project 5 at OpenClassrooms - web developer: Turn a mockup into a website 
+# Project 5 at OpenClassrooms - web developer: Build an e-commerce site  
 ***
 
 Fifth project of the web developer path at OpenClassrooms.
